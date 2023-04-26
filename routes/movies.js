@@ -54,7 +54,20 @@ router.get("/movie-details/:id", (req, res) => {
         .populate("cast")
         .then((movie) => {
             res.render("movies/movie-details.hbs", movie);
-        });
+        }).catch((err) => {
+            console.log(err)
+        })
+});
+
+router.get('/delete/:id', (req, res, next) => {
+    const { id } = req.params
+    Movie.findByIdAndDelete(id)
+        .then((movie) => {
+            res.redirect('/movies/all-movies')
+        })
+        .catch((err) => {
+            console.log(err)
+        })
 })
 
 module.exports = router;
