@@ -48,4 +48,13 @@ router.post('/add-movie', (req, res, next) => {
 
 })
 
+router.get("/movie-details/:id", (req, res) => {
+    const { id } = req.params
+    Movie.findById(id)
+        .populate("cast")
+        .then((movie) => {
+            res.render("movies/movie-details.hbs", movie);
+        });
+})
+
 module.exports = router;
