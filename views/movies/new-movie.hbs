@@ -1,4 +1,4 @@
-<h1>add movie</h1>
+<h1>Add Movie</h1>
 
 <form action="/movies/add-movie" method="POST">
     <label> Title:
@@ -7,13 +7,12 @@
     <br>
 
     <label> Genre:
-        {{!-- <textarea type="text" name="content"> </textarea> --}}
         <input type="text" name="genre" />
     </label>
     <br>
+
     <label> Plot:
         <textarea type="text" name="plot"> </textarea>
-        {{!-- <input type="text" name="title" /> --}}
     </label>
     <br>
 
@@ -27,5 +26,6 @@
     </label>
     <br>
 
-    <button type="submit">Add Movie</button>
+    <button type="submit"> Add Movie </button>
+
 </form>
